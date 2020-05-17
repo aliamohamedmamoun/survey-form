@@ -1,14 +1,14 @@
 import React from "react";
 import CheckBox from "./CheckBox";
 import Radio from "./Radio";
-import Dropdown from "./Dropdown";
+import Option from "./Option";
 
 class Form extends React.Component {
   render() {
     return (
       <form id="survey-form">
         <div>
-          <label id="name-label" for="name">
+          <label id="name-label" htmlFor="name">
             Name:
           </label>
           <input
@@ -20,7 +20,7 @@ class Form extends React.Component {
           />
         </div>
         <div>
-          <label id="email-label" for="email">
+          <label id="email-label" htmlFor="email">
             Email:
           </label>
           <input
@@ -32,7 +32,7 @@ class Form extends React.Component {
           />
         </div>
         <div>
-          <label id="number-label" for="number">
+          <label id="number-label" htmlFor="number">
             Age(from 17 to 70):
           </label>
           <input
@@ -44,13 +44,139 @@ class Form extends React.Component {
             placeholder="Age "
           />
         </div>
-        <Dropdown id="1" />
-        <Radio />
-
-        <CheckBox />
-        <Dropdown id="2" />
         <div>
-          <label for="comments">Any comments or suggestions?</label>
+          <label id="dropdown-label" htmlFor="dropdown">
+            Which option best describes your current role?
+          </label>
+          <select id="dropdown" name="dropdown">
+            <Option
+              value="Select current role"
+              disabled={true}
+              selected={true}
+            />
+            <Option value="Student" />
+            <Option value="Full Time Job" />
+            <Option value="Full Time learner" />
+            <Option value="Prefer not to say" />
+            <Option value="Other" />
+          </select>
+        </div>
+        <div>
+          <label htmlFor="recommendation">
+            Would you recommend freeCodeCamp to a friend?
+          </label>
+          <div id="recommendation">
+            <Radio
+              value="definitely"
+              label="Definitely"
+              name="recommendation"
+              checked={true}
+            />
+            <Radio value="maybe" label="Maybe" name="recommendation" />
+            <Radio value="not-sure" label="Not sure" name="recommendation" />
+          </div>
+        </div>
+        <div>
+          <label htmlFor="improved">
+            What would you like to see improved?(check all that apply){" "}
+          </label>
+          <div id="improved">
+            <CheckBox
+              type="checkbox"
+              id="front-end"
+              name="front-end"
+              value="front end projects"
+              label="Front-end Projects"
+            />
+            <CheckBox
+              type="checkbox"
+              id="back-end"
+              name="back-end"
+              value="back end projects"
+              label="Back-end Projects"
+            />
+            <CheckBox
+              type="checkbox"
+              id="data-vis"
+              name="data-vis"
+              value="data visualization"
+              label="Data Visuaization"
+            />
+            <CheckBox
+              type="checkbox"
+              id="challenges"
+              name="challenges"
+              value="challenges"
+              label="Challenges"
+            />
+            <CheckBox
+              type="checkbox"
+              id="open-source"
+              name="open-source"
+              value="open source community"
+              label="Open Source Community"
+            />
+            <CheckBox
+              type="checkbox"
+              id="gitter-help"
+              name="gitter-help"
+              value="gitter help rooms"
+              label="Gitter help rooms"
+            />
+            <CheckBox
+              type="checkbox"
+              id="videos"
+              name="videos"
+              value="videos"
+              label="Videos"
+            />
+            <CheckBox
+              type="checkbox"
+              id="city-meetups"
+              name="city-meetups"
+              value="city-meetups"
+              label="City Meetups"
+            />
+            <CheckBox
+              type="checkbox"
+              id="wiki"
+              name="wiki"
+              value="wiki"
+              label="Wiki"
+            />
+            <CheckBox
+              type="checkbox"
+              id="forum"
+              name="forum"
+              value="forum"
+              label="Forum"
+            />
+            <CheckBox
+              type="checkbox"
+              id="add-courses"
+              name="add-courses"
+              value="add-courses"
+              label="Additional Courses"
+            />
+          </div>
+        </div>
+        <div>
+          <label id="dropdown-label" htmlFor="dropdown">
+            What is your favorite feature of freeCodeCamp?
+          </label>
+          <select id="dropdown" name="dropdown">
+            <Option value="select-option" disabled={true} selected={true}>
+              Select an option
+            </Option>
+            <Option value="challenges">Challenges</Option>
+            <Option value="projects">Projects</Option>
+            <Option value="community">Community</Option>
+            <Option value="open-source">Open Source</Option>
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="comments">Any comments or suggestions?</label>
           <textarea
             id="comments"
             placeholder="Enter your comment here..."
