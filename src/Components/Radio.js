@@ -6,7 +6,6 @@ class Radio extends React.Component {
       <div className="radio">
         <input
           type="radio"
-          id={this.props.value}
           name={this.props.name}
           value={this.props.value}
           checked={this.props.checked}

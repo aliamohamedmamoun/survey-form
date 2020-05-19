@@ -4,6 +4,21 @@ import Radio from "./Radio";
 import Option from "./Option";
 
 class Form extends React.Component {
+  state = {
+    checkboxData: [
+      { value: "front end projects", label: "Front-end Projects" },
+      { value: "back end projects", label: "Back-end Projects" },
+      { value: "data visualization", label: "Data Visuaization" },
+      { value: "challenges", label: "Challenges" },
+      { value: "open source community", label: "Open Source Community" },
+      { value: "gitter help rooms", label: "Gitter help rooms" },
+      { value: "videos", label: "Videos" },
+      { value: "city-meetups", label: "City Meetups" },
+      { value: "wiki", label: "Wiki" },
+      { value: "forum", label: "Forum" },
+      { value: "add-courses", label: "Additional Courses" }
+    ]
+  };
   render() {
     return (
       <form id="survey-form">
@@ -81,83 +96,7 @@ class Form extends React.Component {
             What would you like to see improved?(check all that apply){" "}
           </label>
           <div id="improved">
-            <CheckBox
-              type="checkbox"
-              id="front-end"
-              name="front-end"
-              value="front end projects"
-              label="Front-end Projects"
-            />
-            <CheckBox
-              type="checkbox"
-              id="back-end"
-              name="back-end"
-              value="back end projects"
-              label="Back-end Projects"
-            />
-            <CheckBox
-              type="checkbox"
-              id="data-vis"
-              name="data-vis"
-              value="data visualization"
-              label="Data Visuaization"
-            />
-            <CheckBox
-              type="checkbox"
-              id="challenges"
-              name="challenges"
-              value="challenges"
-              label="Challenges"
-            />
-            <CheckBox
-              type="checkbox"
-              id="open-source"
-              name="open-source"
-              value="open source community"
-              label="Open Source Community"
-            />
-            <CheckBox
-              type="checkbox"
-              id="gitter-help"
-              name="gitter-help"
-              value="gitter help rooms"
-              label="Gitter help rooms"
-            />
-            <CheckBox
-              type="checkbox"
-              id="videos"
-              name="videos"
-              value="videos"
-              label="Videos"
-            />
-            <CheckBox
-              type="checkbox"
-              id="city-meetups"
-              name="city-meetups"
-              value="city-meetups"
-              label="City Meetups"
-            />
-            <CheckBox
-              type="checkbox"
-              id="wiki"
-              name="wiki"
-              value="wiki"
-              label="Wiki"
-            />
-            <CheckBox
-              type="checkbox"
-              id="forum"
-              name="forum"
-              value="forum"
-              label="Forum"
-            />
-            <CheckBox
-              type="checkbox"
-              id="add-courses"
-              name="add-courses"
-              value="add-courses"
-              label="Additional Courses"
-            />
+            <CheckBox checkboxData={this.state.checkboxData} />
           </div>
         </div>
         <div>
