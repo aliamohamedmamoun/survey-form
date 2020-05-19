@@ -1,0 +1,10 @@
+.radio input {
+  height: 20px;
+  width: 20px;
+  color: blue;
+  margin-right: 5px;
+}
+.radio {
+  display: flex;
+  justify-items: baseline;
+}
