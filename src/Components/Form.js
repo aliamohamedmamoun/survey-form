@@ -96,7 +96,9 @@ class Form extends React.Component {
             What would you like to see improved?(check all that apply){" "}
           </label>
           <div id="improved">
-            <CheckBox checkboxData={this.state.checkboxData} />
+            {this.state.checkboxData.map(checkbox => (
+              <CheckBox value={checkbox.value} label={checkbox.label} />
+            ))}
           </div>
         </div>
         <div>
